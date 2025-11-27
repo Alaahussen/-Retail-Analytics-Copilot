@@ -19,10 +19,10 @@
 - **Evidence**: See `agent_trace.log` for detailed optimization report and execution traces
 ---
 ## Key Assumptions & Trade-offs
-- **Cost Approximation**: Used CostOfGoods ≈ 0.7 × UnitPrice as specified in requirements
+- **Cost Approximation**: Used CostOfGoods ≈ 0.7 × UnitPrice 
 - **Date Range Handling**: Marketing calendar dates (1997) mapped to actual database date ranges when available
 - **Empty Results**: Queries returning no data maintain proper format types with "No data" placeholders
-- **Retrieval Simplicity**: Used TF-IDF retrieval with paragraph-level chunking for local operation
+- **Retrieval Simplicity**: Used BM25 retrieval with paragraph-level chunking for improved relevance scoring
 ---
 ## Execution & Tracing
 - **Trace Log**: `agent_trace.log` provides complete execution visibility with timestamps, node transitions, and metadata
