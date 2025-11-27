@@ -8,7 +8,9 @@
 ---
 ## Graph Architecture
 <img width="1074" height="2892" alt="Image" src="https://github.com/user-attachments/assets/1c9d744e-b042-4371-bbb1-f3d33a08601a" />
+
 ---
+
 ## DSPy Optimization
 - **Optimized Module**: SQL Generator
 - **Before Optimization**: valid_sql_rate = 0.25 (1/4 test cases passed)
