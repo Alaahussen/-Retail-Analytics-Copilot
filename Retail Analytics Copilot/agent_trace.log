@@ -1,0 +1,3119 @@
+🧠 HYBRID AGENT EXECUTION TRACE LOG
+==================================================
+Created: 2025-11-28 00:57:05
+==================================================
+
+
+🚀 [00:57:05] OPTIMIZATION - start
+----------------------------------------
+📋 Metadata:
+   module: sql_generator
+   timestamp: 2025-11-28T00:57:05.384855
+
+
+🚀 OPTIMIZATION REPORT - SQL_GENERATOR
+==================================================
+Time: 00:57:06
+--------------------------------------------------
+📊 BEFORE Optimization:
+   valid_sql_rate: 0.25
+📈 AFTER Optimization:
+   valid_sql_rate: 0.5
+📈 Improvement: +0.25
+==================================================
+
+
+📊 [00:57:06] VALIDATION - date_range_detection
+----------------------------------------
+📋 Metadata:
+   min_date: 2012-07-10 15:40:46
+   max_date: 2023-10-28 00:09:48
+   min_year: 2012
+   max_year: 2023
+
+
+🎯 [00:57:07] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+   format_hint: int
+   start_time: 2025-11-28T00:57:07.076854
+
+
+➡️ [00:57:07] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:07] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: rag
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: False
+   final_route: rag
+
+
+➡️ [00:57:07] NODE_START - retriever
+----------------------------------------
+🛣️  Route: rag
+
+
+✅ [00:57:07] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 3
+   enhanced_query: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+
+
+➡️ [00:57:07] NODE_START - planner
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+
+
+✅ [00:57:07] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Products'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   skip_reason: RAG route
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   skip_reason: No SQL to execute
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: rag
+   citations_count: 3
+   confidence_score: 0.7
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:07] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+   format_hint: int
+   start_time: 2025-11-28T00:57:07.076854
+   end_time: 2025-11-28T00:57:07.099516
+   final_confidence: 0.7
+   repair_count: 0
+   success: True
+
+
+🎯 [00:57:07] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+   format_hint: {category:str, quantity:int}
+   start_time: 2025-11-28T00:57:07.102518
+
+
+➡️ [00:57:07] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:07] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [00:57:07] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [00:57:07] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+
+
+➡️ [00:57:07] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [00:57:07] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.5
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [00:57:07] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: Query returned empty results
+   current_route: sql
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.2
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [00:57:07] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: Query returned empty results
+   current_route: sql
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.1
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.1
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:07] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+   format_hint: {category:str, quantity:int}
+   start_time: 2025-11-28T00:57:07.102518
+   end_time: 2025-11-28T00:57:07.648637
+   final_confidence: 0.1
+   repair_count: 2
+   success: True
+
+
+🎯 [00:57:07] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T00:57:07.648637
+
+
+➡️ [00:57:07] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:07] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: hybrid
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: True
+   final_route: hybrid
+
+
+➡️ [00:57:07] NODE_START - retriever
+----------------------------------------
+🛣️  Route: hybrid
+
+
+✅ [00:57:07] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Metadata:
+   retrieval_terms: ['winter', 'aov', 'kpi', 'return']
+   chunks_retrieved: 4
+   enhanced_query: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals. winter aov kpi return
+
+
+➡️ [00:57:07] NODE_START - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+
+
+✅ [00:57:07] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.95
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [00:57:07] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: None
+   current_route: hybrid
+
+
+➡️ [00:57:07] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [00:57:07] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:07] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [00:57:07] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:07] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [00:57:07] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.7
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:07] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [00:57:08] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: None
+   current_route: hybrid
+
+
+➡️ [00:57:08] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [00:57:08] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:08] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [00:57:08] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:08] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [00:57:08] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.4
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:08] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:08] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T00:57:07.648637
+   end_time: 2025-11-28T00:57:08.168866
+   final_confidence: 0.4
+   repair_count: 2
+   success: True
+
+
+🎯 [00:57:08] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+   format_hint: list[{product:str, revenue:float}]
+   start_time: 2025-11-28T00:57:08.168866
+
+
+➡️ [00:57:08] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:08] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [00:57:08] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [00:57:08] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+
+
+➡️ [00:57:08] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [00:57:08] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'all_time', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:08] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [00:57:08] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': [], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'all_time', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:08] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [00:57:09] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+   rows_returned: 3
+   success: True
+
+
+➡️ [00:57:09] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [00:57:09] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 3
+   confidence_score: 0.8
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:09] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:09] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+   format_hint: list[{product:str, revenue:float}]
+   start_time: 2025-11-28T00:57:08.168866
+   end_time: 2025-11-28T00:57:09.646633
+   final_confidence: 0.8
+   repair_count: 0
+   success: True
+
+
+🎯 [00:57:09] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T00:57:09.646633
+
+
+➡️ [00:57:09] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:09] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [00:57:09] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [00:57:09] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+
+
+➡️ [00:57:09] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [00:57:09] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:09] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:09] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:09] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:09] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:09] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:09] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.8
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:09] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [00:57:09] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: None
+   current_route: sql
+
+
+➡️ [00:57:09] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [00:57:09] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:09] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [00:57:09] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:10] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [00:57:10] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.5
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:10] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [00:57:10] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: None
+   current_route: sql
+
+
+➡️ [00:57:10] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [00:57:10] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [00:57:10] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [00:57:10] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [00:57:10] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [00:57:10] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.2
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [00:57:10] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:10] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T00:57:09.646633
+   end_time: 2025-11-28T00:57:10.856359
+   final_confidence: 0.2
+   repair_count: 2
+   success: True
+
+
+🎯 [00:57:10] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}.
+   format_hint: {customer:str, margin:float}
+   start_time: 2025-11-28T00:57:10.863316
+
+
+➡️ [00:57:10] NODE_START - router
+----------------------------------------
+
+
+✅ [00:57:10] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: hybrid
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: True
+   final_route: hybrid
+
+
+➡️ [00:57:10] NODE_START - retriever
+----------------------------------------
+🛣️  Route: hybrid
+
+
+✅ [00:57:10] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Metadata:
+   retrieval_terms: ['margin', 'kpi', 'return']
+   chunks_retrieved: 4
+   enhanced_query: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}. margin kpi return
+
+
+➡️ [00:57:10] NODE_START - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+
+
+✅ [00:57:10] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [00:57:10] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:10] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:10] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [00:57:11] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:11] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+
+
+✅ [00:57:11] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.7
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:11] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [00:57:11] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: Query returned empty results
+   current_route: hybrid
+
+
+➡️ [00:57:11] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [00:57:11] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:11] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [00:57:11] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:11] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+
+
+✅ [00:57:11] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.4
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:11] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [00:57:11] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: Query returned empty results
+   current_route: hybrid
+
+
+➡️ [00:57:11] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+
+
+✅ [00:57:11] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [00:57:11] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+
+
+✅ [00:57:11] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [00:57:11] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+
+
+✅ [00:57:11] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.1
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.1
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [00:57:11] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [00:57:11] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}.
+   format_hint: {customer:str, margin:float}
+   start_time: 2025-11-28T00:57:10.863316
+   end_time: 2025-11-28T00:57:11.866746
+   final_confidence: 0.1
+   repair_count: 2
+   success: True
+
+
+🚀 [01:04:54] OPTIMIZATION - start
+----------------------------------------
+📋 Metadata:
+   module: sql_generator
+   timestamp: 2025-11-28T01:04:54.577803
+
+
+🚀 OPTIMIZATION REPORT - SQL_GENERATOR
+==================================================
+Time: 01:04:55
+--------------------------------------------------
+📊 BEFORE Optimization:
+   valid_sql_rate: 0.25
+📈 AFTER Optimization:
+   valid_sql_rate: 0.5
+📈 Improvement: +0.25
+==================================================
+
+
+📊 [01:04:55] VALIDATION - date_range_detection
+----------------------------------------
+📋 Metadata:
+   min_date: 2012-07-10 15:40:46
+   max_date: 2023-10-28 00:09:48
+   min_year: 2012
+   max_year: 2023
+
+
+🎯 [01:04:55] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+   format_hint: int
+   start_time: 2025-11-28T01:04:55.685228
+
+
+➡️ [01:04:55] NODE_START - router
+----------------------------------------
+
+
+✅ [01:04:55] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: rag
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: False
+   final_route: rag
+
+
+➡️ [01:04:55] NODE_START - retriever
+----------------------------------------
+🛣️  Route: rag
+
+
+✅ [01:04:55] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 3
+   enhanced_query: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+
+
+➡️ [01:04:55] NODE_START - planner
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+
+
+✅ [01:04:55] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Products'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:04:55] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:55] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   skip_reason: RAG route
+
+
+➡️ [01:04:55] NODE_START - executor
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:55] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+📋 Metadata:
+   skip_reason: No SQL to execute
+
+
+➡️ [01:04:55] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:55] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: rag
+📚 Retrieved: 3 chunks
+📋 Constraints: categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: rag
+   citations_count: 3
+   confidence_score: 0.7
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:04:55] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:04:55] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: According to the product policy, what is the return window (days) for unopened Beverages? Return an integer.
+   format_hint: int
+   start_time: 2025-11-28T01:04:55.685228
+   end_time: 2025-11-28T01:04:55.739768
+   final_confidence: 0.7
+   repair_count: 0
+   success: True
+
+
+🎯 [01:04:55] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+   format_hint: {category:str, quantity:int}
+   start_time: 2025-11-28T01:04:55.743744
+
+
+➡️ [01:04:55] NODE_START - router
+----------------------------------------
+
+
+✅ [01:04:55] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [01:04:55] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [01:04:55] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+
+
+➡️ [01:04:55] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [01:04:55] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:04:55] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:55] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:55] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:56] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:04:56] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+
+
+✅ [01:04:56] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.5
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:04:56] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [01:04:56] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: Query returned empty results
+   current_route: sql
+
+
+➡️ [01:04:56] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [01:04:56] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:56] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [01:04:56] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:04:56] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.5
+
+
+✅ [01:04:56] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.2
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:04:56] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [01:04:56] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: Query returned empty results
+   current_route: sql
+
+
+➡️ [01:04:56] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+
+
+✅ [01:04:56] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:56] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+
+
+✅ [01:04:56] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+📋 Metadata:
+   query_executed: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:04:56] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.2
+
+
+✅ [01:04:56] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT C.CategoryName, SUM(OD.Quantity) AS TotalQuantitySold FROM Orders AS O JOIN "Order Details" A...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.1
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.1
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:04:56] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:04:56] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: During 'Summer Beverages 1997' as defined in the marketing calendar, which product category had the highest total quantity sold? Return {category:str, quantity:int}.
+   format_hint: {category:str, quantity:int}
+   start_time: 2025-11-28T01:04:55.743744
+   end_time: 2025-11-28T01:04:56.742910
+   final_confidence: 0.1
+   repair_count: 2
+   success: True
+
+
+🎯 [01:04:56] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T01:04:56.746910
+
+
+➡️ [01:04:56] NODE_START - router
+----------------------------------------
+
+
+✅ [01:04:56] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: hybrid
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: True
+   final_route: hybrid
+
+
+➡️ [01:04:56] NODE_START - retriever
+----------------------------------------
+🛣️  Route: hybrid
+
+
+✅ [01:04:56] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Metadata:
+   retrieval_terms: ['winter', 'aov', 'kpi', 'return']
+   chunks_retrieved: 4
+   enhanced_query: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals. winter aov kpi return
+
+
+➡️ [01:04:56] NODE_START - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+
+
+✅ [01:04:56] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:04:56] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:56] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:04:56] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:56] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:04:56] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:56] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.95
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:56] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [01:04:56] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: None
+   current_route: hybrid
+
+
+➡️ [01:04:56] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [01:04:57] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:04:57] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [01:04:57] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:04:57] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.95
+
+
+✅ [01:04:57] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.7
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:57] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [01:04:57] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: None
+   current_route: hybrid
+
+
+➡️ [01:04:57] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [01:04:57] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-12-01 to 1997-12-31', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:04:57] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [01:04:57] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:04:57] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [01:04:57] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) / COUNT(DISTINCT O.OrderID), 2) FRO...
+📚 Retrieved: 4 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 5
+   confidence_score: 0.4
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:57] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:04:57] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Using the AOV definition from the KPI docs, what was the Average Order Value during 'Winter Classics 1997'? Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T01:04:56.746910
+   end_time: 2025-11-28T01:04:57.415433
+   final_confidence: 0.4
+   repair_count: 2
+   success: True
+
+
+🎯 [01:04:57] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+   format_hint: list[{product:str, revenue:float}]
+   start_time: 2025-11-28T01:04:57.421953
+
+
+➡️ [01:04:57] NODE_START - router
+----------------------------------------
+
+
+✅ [01:04:57] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [01:04:57] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [01:04:57] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+
+
+➡️ [01:04:57] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [01:04:57] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'all_time', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:04:57] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [01:04:57] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': [], 'entities': ['Orders', 'Products', 'Categories'], 'time_period': 'all_time', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:57] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [01:04:59] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+   rows_returned: 3
+   success: True
+
+
+➡️ [01:04:59] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+
+
+✅ [01:04:59] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT
+  T1.ProductName,
+  SUM(T2.UnitPrice * T2.Quantity * (1 - T2.Discount)) AS TotalRevenue
+FROM ...
+📚 Retrieved: 1 chunks
+📋 Constraints: kpi_formula, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 3
+   confidence_score: 0.8
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:59] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:04:59] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Top 3 products by total revenue all-time. Revenue uses Order Details: SUM(UnitPrice*Quantity*(1-Discount)). Return list[{product:str, revenue:float}].
+   format_hint: list[{product:str, revenue:float}]
+   start_time: 2025-11-28T01:04:57.421953
+   end_time: 2025-11-28T01:04:59.319951
+   final_confidence: 0.8
+   repair_count: 0
+   success: True
+
+
+🎯 [01:04:59] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T01:04:59.319951
+
+
+➡️ [01:04:59] NODE_START - router
+----------------------------------------
+
+
+✅ [01:04:59] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: sql
+📋 Metadata:
+   has_doc_reference: False
+   requires_data: True
+   final_route: sql
+
+
+➡️ [01:04:59] NODE_START - retriever
+----------------------------------------
+🛣️  Route: sql
+
+
+✅ [01:04:59] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Metadata:
+   retrieval_terms: []
+   chunks_retrieved: 1
+   enhanced_query: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+
+
+➡️ [01:04:59] NODE_START - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+
+
+✅ [01:04:59] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:04:59] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:59] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:59] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:59] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:04:59] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:04:59] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.8
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:59] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [01:04:59] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: None
+   current_route: sql
+
+
+➡️ [01:04:59] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [01:04:59] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:59] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [01:04:59] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:04:59] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.8
+
+
+✅ [01:04:59] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.5
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:04:59] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=False, sql_failed=False, invalid_answer=True, sql_empty=False
+
+
+🔧 [01:04:59] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: None
+   current_route: sql
+
+
+➡️ [01:04:59] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [01:04:59] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   constraints_applied: {'date_range': '1997-06-01 to 1997-06-30', 'kpi_formula': 'SUM("Order Details".UnitPrice * "Order Details".Quantity * (1 - "Order Details".Discount))', 'categories': ['Beverages', 'Dairy Products', 'Confections', 'Condiments'], 'entities': ['Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: sql
+
+
+➡️ [01:04:59] NODE_START - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [01:05:00] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+📋 Metadata:
+   query_executed: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+   rows_returned: 1
+   success: True
+
+
+➡️ [01:05:00] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.5
+
+
+✅ [01:05:00] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: sql
+🗃️  SQL: SELECT ROUND(SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount)), 2) FROM Orders AS O JOIN "Order De...
+📚 Retrieved: 1 chunks
+📋 Constraints: date_range, kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.2
+📋 Metadata:
+   synthesis_type: sql
+   citations_count: 5
+   confidence_score: 0.2
+   sql_data_used: True
+   document_context_used: True
+
+
+📊 [01:05:00] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:05:00] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Total revenue from the 'Beverages' category during 'Summer Beverages 1997' dates. Return a float rounded to 2 decimals.
+   format_hint: float
+   start_time: 2025-11-28T01:04:59.319951
+   end_time: 2025-11-28T01:05:00.078411
+   final_confidence: 0.2
+   repair_count: 2
+   success: True
+
+
+🎯 [01:05:00] EXECUTION - agent_start
+----------------------------------------
+📋 Metadata:
+   question: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}.
+   format_hint: {customer:str, margin:float}
+   start_time: 2025-11-28T01:05:00.080446
+
+
+➡️ [01:05:00] NODE_START - router
+----------------------------------------
+
+
+✅ [01:05:00] NODE_SUCCESS - router
+----------------------------------------
+🛣️  Route: hybrid
+📋 Metadata:
+   has_doc_reference: True
+   requires_data: True
+   final_route: hybrid
+
+
+➡️ [01:05:00] NODE_START - retriever
+----------------------------------------
+🛣️  Route: hybrid
+
+
+✅ [01:05:00] NODE_SUCCESS - retriever
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Metadata:
+   retrieval_terms: ['margin', 'kpi', 'return']
+   chunks_retrieved: 4
+   enhanced_query: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}. margin kpi return
+
+
+➡️ [01:05:00] NODE_START - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+
+
+✅ [01:05:00] NODE_SUCCESS - planner
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_found: {'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   document_context_used: True
+
+
+➡️ [01:05:00] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:05:00] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:05:00] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+
+
+✅ [01:05:00] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:05:00] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+
+
+✅ [01:05:00] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.7
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:05:00] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [01:05:00] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 1
+   previous_error: Query returned empty results
+   current_route: hybrid
+
+
+➡️ [01:05:00] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [01:05:00] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:05:00] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.7
+
+
+✅ [01:05:00] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:05:00] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.7
+
+
+✅ [01:05:00] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.4
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:05:00] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: repair
+   reason: has_error=True, sql_failed=False, invalid_answer=False, sql_empty=True
+
+
+🔧 [01:05:00] REPAIR - repair_node
+----------------------------------------
+📋 Metadata:
+   repair_count: 2
+   previous_error: Query returned empty results
+   current_route: hybrid
+
+
+➡️ [01:05:00] NODE_START - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+
+
+✅ [01:05:00] NODE_SUCCESS - sql_generator
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+📋 Metadata:
+   constraints_applied: {'date_range': '', 'kpi_formula': 'SUM("Order Details".Quantity)', 'categories': ['Beverages', 'Dairy Products', 'Meat/Poultry', 'Produce', 'Seafood', 'Confections', 'Grains/Cereals', 'Condiments'], 'entities': ['Customers', 'Orders', 'Products', 'Categories'], 'time_period': 'seasonal', 'cost_assumption': 'CostOfGoods ≈ 0.7 * UnitPrice'}
+   sql_cleanup_applied: True
+   route: hybrid
+
+
+➡️ [01:05:00] NODE_START - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+🎯 Confidence: 0.4
+
+
+✅ [01:05:01] NODE_SUCCESS - executor
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+📋 Metadata:
+   query_executed: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+   rows_returned: 0
+   success: True
+
+
+➡️ [01:05:01] NODE_START - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.4
+
+
+✅ [01:05:01] NODE_SUCCESS - synthesizer
+----------------------------------------
+🛣️  Route: hybrid
+🗃️  SQL: SELECT
+  C.CompanyName AS customer,
+  SUM(OD.UnitPrice * OD.Quantity * (1 - OD.Discount) * 0.3) AS m...
+📚 Retrieved: 4 chunks
+📋 Constraints: kpi_formula, categories, entities, time_period, cost_assumption
+❌ Error: Query returned empty results
+🎯 Confidence: 0.1
+📋 Metadata:
+   synthesis_type: hybrid
+   citations_count: 6
+   confidence_score: 0.1
+   sql_data_used: False
+   document_context_used: True
+
+
+📊 [01:05:01] VALIDATION - repair_decision
+----------------------------------------
+📋 Metadata:
+   repair_decision: end
+   reason: All checks passed or max repairs reached
+
+
+🎯 [01:05:01] EXECUTION - agent_complete
+----------------------------------------
+📋 Metadata:
+   question: Per the KPI definition of gross margin, who was the top customer by gross margin in 1997? Assume CostOfGoods is approximated by 70% of UnitPrice if not available. Return {customer:str, margin:float}.
+   format_hint: {customer:str, margin:float}
+   start_time: 2025-11-28T01:05:00.080446
+   end_time: 2025-11-28T01:05:01.348291
+   final_confidence: 0.1
+   repair_count: 2
+   success: True
+
